@@ -45,9 +45,9 @@
 			var KindWord = document.getElementById("word_info");
 			var KindWord_name = document.getElementById("word_name");
 			
-			var textList = readTextFile("KindWordList.txt")
+			var textList = readTextFile("KindWordList.txt");
 			
-			var splitTextList = textList.split('\n')
+			var splitTextList = textList.split('\n');
 			
 			
 			
@@ -67,11 +67,12 @@
 				if(rawFile.status === 200 || rawFile.status == 0)
 				{
 					var allText = rawFile.responseText;
-					return(alltext);
+					
 				}
 			}
 		}
 		rawFile.send(null);
+		return(alltext);
 		}
 		
 		
