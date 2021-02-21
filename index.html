@@ -35,9 +35,9 @@
 	<script language="javascript">
 
 
-		function Random() {
+		function Random(length) {
 			randomNumber = Math.random();
-			Num = Math.floor( randomNumber * (splitTextList.length/2));
+			Num = Math.floor( randomNumber * length);
 			return Num;
 		}
 
@@ -60,7 +60,7 @@
 					var allText = rawFile.responseText;
 					var splitTextList = allText.split('\n');
 
-					Num = Random();
+					Num = Random(splitTextList.length/2);
 					KindWord.innerText = '"'+splitTextList[Num*2]+'"';
 					KindWord_name.innerText = splitTextList[Num*2-1] + "님이 당신에게";
 				}
