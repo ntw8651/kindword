@@ -38,25 +38,9 @@
 		function Random() {
 			randomNumber = Math.random();
 			Num = Math.floor( randomNumber * (splitTextList.length/2));
-			return(Num);
+			return Num;
 		}
-	
-		function KindWordRe() {
-			var KindWord = document.getElementById("word_info");
-			var KindWord_name = document.getElementById("word_name");
-			
-			var textList = readTextFile("KindWordList.txt");
-			alert(textList[0]);
-			var splitTextList = textList.value.split('\n');
-			
-			
-			
-			Num = Random();
-			KindWord.innerText = '"'+splitTextList[Num*2]+'"';
-			KindWord_name.innerText = splitTextList[Num*2-1] + "님이 당신에게";
-			
-		}
-		
+
 		function readTextFile(file) {
 		var rawFile = new XMLHttpRequest();
 		rawFile.open("GET", file, false);
@@ -68,11 +52,25 @@
 				if(rawFile.status === 200 || rawFile.status == 0)
 				{
 					var allText = rawFile.responseText;
-					alert(allText);
-					alert(typeof(allText));
-					return(allText);
+					return allText;
 				}
 			}
+		}
+		
+				function KindWordRe() {
+			var KindWord = document.getElementById("word_info");
+			var KindWord_name = document.getElementById("word_name");
+			
+			var textList = readTextFile("KindWordList.txt");
+			alert(textList);
+			var splitTextList = textList.split('\n');
+			
+			
+			
+			Num = Random();
+			KindWord.innerText = '"'+splitTextList[Num*2]+'"';
+			KindWord_name.innerText = splitTextList[Num*2-1] + "님이 당신에게";
+			
 		}
 		rawFile.send(null);
 		
