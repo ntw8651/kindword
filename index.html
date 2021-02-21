@@ -42,17 +42,27 @@
 		}
 
 		function readTextFile(file) {
+		
 		var rawFile = new XMLHttpRequest();
 		rawFile.open("GET", file, false);
-		var allText;
+		
+		var KindWord = document.getElementById("word_info");
+		var KindWord_name = document.getElementById("word_name");
+		
 		rawFile.onreadystatechange = function ()
 		{
 			if(rawFile.readyState === 4)
 			{
 				if(rawFile.status === 200 || rawFile.status == 0)
 				{
+					
+					var allText;
 					var allText = rawFile.responseText;
-					return allText;
+					var splitTextList = allText.split('\n');
+
+					Num = Random();
+					KindWord.innerText = '"'+splitTextList[Num*2]+'"';
+					KindWord_name.innerText = splitTextList[Num*2-1] + "님이 당신에게";
 				}
 			}
 		}
@@ -65,7 +75,6 @@
 			var KindWord_name = document.getElementById("word_name");
 			
 			var textList = readTextFile("KindWordList.txt");
-			alert(textList);
 			var splitTextList = textList.split('\n');
 			
 			
@@ -76,8 +85,8 @@
 			
 		}
 
-		
-		KindWordRe();
+		readTextFile("KindWordList.txt");
+		//KindWordRe();
 		
 	</script>
 </body>
