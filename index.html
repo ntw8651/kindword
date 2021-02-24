@@ -31,9 +31,10 @@
 		 <div id = "word_info">뭔가엄청나게긴말</div>
 		 <div id = "word_name">이름</div>
 		</div>
+		
 	</div>
 	<script language="javascript">
-
+		//할것 : 디자인 수정하기, 말 입력할 수 있게 input 넣기, 일단ㅇ느 여기까지
 
 		function Random(length) {
 			randomNumber = Math.random();
@@ -63,8 +64,11 @@
 					var Num = Random(splitTextList.length/2);
 					//alert(splitTextList[0]);
 					//alert(Num);
-					KindWord.innerText = '"'+splitTextList[Num*2-1]+'"';
-					KindWord_name.innerText = splitTextList[Num*2-2] + "님이 당신에게";
+					kind_text = splitTextList[Num*2-1].replace(/\r/g,"");
+					kind_name = splitTextList[Num*2-2].replace(/\r/g,"");
+					
+					KindWord.innerText = '"'+kind_text+'"';
+					KindWord_name.innerText = kind_name + '님이 당신에게';
 				}
 			}
 		}
@@ -73,8 +77,7 @@
 		}
 
 		readTextFile("KindWordList.txt");
-		//KindWordRe();
-		
+
 	</script>
 </body>
 </html>
