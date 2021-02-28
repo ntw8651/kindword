@@ -25,11 +25,11 @@
 			var kindname = document.getElementById("kind_name").value;
 			if (id_kindname == ""){
 				alert("당신의 별명을 입력해주세요");
-				break;
+				return;
 			}
 			if (id_kindword == ""){
 				alert("침묵도 따뜻할 수 있지만 여기선 아니에요");
-				break;
+				return;
 			}
 			var fWrite = fileObject.OpenTextFile("KindWordList.txt");
 			fWrite.write(kindname+"\n"+kindword+"\n");
