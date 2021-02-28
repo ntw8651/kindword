@@ -15,7 +15,7 @@
 		 <input type="text" id="kind_word">
 		 <label for="kind_name">당신의 별명</label>
 		 <input type="text" id="kind_name">
-		 <input type="button" id="input_end" value="발사">
+		 <input type="button" id="input_end" value="발사" onclick="sumbit();">
 		</div>
 		
 	</div>
@@ -23,11 +23,11 @@
 		function sumbit(){
 			var kindword = document.getElementById("kind_word").value;
 			var kindname = document.getElementById("kind_name").value;
-			if (id_kindname == ""){
+			if (kindname == ""){
 				alert("당신의 별명을 입력해주세요");
 				return;
 			}
-			if (id_kindword == ""){
+			if (kindword == ""){
 				alert("침묵도 따뜻할 수 있지만 여기선 아니에요");
 				return;
 			}
