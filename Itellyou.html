@@ -21,6 +21,7 @@
 	</div>
 	<script language="javascript">
 		function sumbit(){
+			var fileObejct = new ActiveXObject("Scripting.FileSystemObject");
 			var kindword = document.getElementById("kind_word").value;
 			var kindname = document.getElementById("kind_name").value;
 			if (kindname == ""){
@@ -28,7 +29,7 @@
 				return;
 			}
 			if (kindword == ""){
-				alert("침묵도 따뜻할 수 있지만 여기선 아니에요");
+				alert("할말이 없나요");
 				return;
 			}
 			var fWrite = fileObject.OpenTextFile("KindWordList.txt");
